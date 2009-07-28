@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D54AF39D-CB43-4D32-A89D-D55EE924AB57}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Oxite</RootNamespace>
+    <AssemblyName>Oxite</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BlogML, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\BlogML.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackgroundServices\BackgroundServiceBase.cs" />
+    <Compile Include="BackgroundServices\BackgroundServiceExecutor.cs" />
+    <Compile Include="BackgroundServices\BackgroundServicesExecutor.cs" />
+    <Compile Include="BackgroundServices\SendMessages.cs" />
+    <Compile Include="BackgroundServices\SendTrackbacks.cs" />
+    <Compile Include="BootStrapperTasks\LoadModules.cs" />
+    <Compile Include="Extensions\ControllerBaseExtensions.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\ExtendedPropertyExtensions.cs" />
+    <Compile Include="Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Extensions\HttpCookieCollectionExtensions.cs" />
+    <Compile Include="Extensions\HttpRequestBaseExtensions.cs" />
+    <Compile Include="Extensions\HttpRequestExtensions.cs" />
+    <Compile Include="Extensions\IDictionaryExtensions.cs" />
+    <Compile Include="Extensions\IPAddressExtensions.cs" />
+    <Compile Include="Extensions\IRegularExpressionsExtensions.cs" />
+    <Compile Include="Extensions\IUnityContainerExtensions.cs" />
+    <Compile Include="Extensions\ModelStateDictionaryExtensions.cs" />
+    <Compile Include="Extensions\NameValueCollectionExtensions.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Extensions\RouteCollectionExtensions.cs" />
+    <Compile Include="Extensions\UrlHelperExtensions.cs" />
+    <Compile Include="Extensions\ViewDataDictionaryExtensions.cs" />
+    <Compile Include="Filters\AjaxActionFilter.cs" />
+    <Compile Include="Filters\AntiForgeryAuthorizationFilter.cs" />
+    <Compile Include="Filters\AtomResultActionFilter.cs" />
+    <Compile Include="Filters\BlogSkinLayerResultFilter.cs" />
+    <Compile Include="Filters\CommentingDisabledActionFilter.cs" />
+    <Compile Include="Filters\DebugActionFilter.cs" />
+    <Compile Include="Filters\DialogActionFilter.cs" />
+    <Compile Include="Filters\EnsureModelExceptionFilter.cs" />
+    <Compile Include="Filters\ErrorExceptionFilter.cs" />
+    <Compile Include="Filters\FeedResultActionFilter.cs" />
+    <Compile Include="Filters\JsonResultActionFilter.cs" />
+    <Compile Include="Filters\LocalizationActionFilter.cs" />
+    <Compile Include="Filters\PageSizeActionFilter.cs" />
+    <Compile Include="Filters\ResponseInsertResultFilter.cs" />
+    <Compile Include="Filters\RssResultActionFilter.cs" />
+    <Compile Include="Filters\SiteActionFilter.cs" />
+    <Compile Include="Filters\ValidationLocalizationActionFilter.cs" />
+    <Compile Include="Filters\ViewEnginesResultFilter.cs" />
+    <Compile Include="Infrastructure\AntiXSS.cs" />
+    <Compile Include="Infrastructure\ExtendedPropertyComparer.cs" />
+    <Compile Include="Infrastructure\ExtendedProperty.cs" />
+    <Compile Include="Infrastructure\ExtendedPropertyStoreComparer.cs" />
+    <Compile Include="Infrastructure\ExtendedPropertyStoreBlank.cs" />
+    <Compile Include="Infrastructure\ICacheItem.cs" />
+    <Compile Include="Infrastructure\IExtendedPropertyStore.cs" />
+    <Compile Include="Infrastructure\IModulesLoaded.cs" />
+    <Compile Include="Infrastructure\IOxiteAuthenticationModule.cs" />
+    <Compile Include="Infrastructure\ModulesLoaded.cs" />
+    <Compile Include="Infrastructure\PartialViewRegistration.cs" />
+    <Compile Include="Plugins\PluginStyleContext.cs" />
+    <Compile Include="Plugins\PluginScriptContext.cs" />
+    <Compile Include="Plugins\PluginRoute.cs" />
+    <Compile Include="Plugins\PluginTemplateContext.cs" />
+    <Compile Include="Plugins\PluginTemplateRegistry.cs" />
+    <Compile Include="Infrastructure\OxiteControllerActionInvoker.cs" />
+    <Compile Include="Infrastructure\OxiteRegisterModules.cs" />
+    <Compile Include="Infrastructure\OxiteRouteUrlModifier.cs" />
+    <Compile Include="Infrastructure\XmlRpc\XmlRpcFilterCriteria.cs" />
+    <Compile Include="Infrastructure\XmlRpc\XmlRpcControllerActionInvoker.cs" />
+    <Compile Include="Infrastructure\XmlRpc\XmlRpcFaultExceptionFilter.cs" />
+    <Compile Include="Infrastructure\XmlRpc\XmlRpcFaultHttpHandler.cs" />
+    <Compile Include="Infrastructure\XmlRpc\XmlRpcFaultResult.cs" />
+    <Compile Include="Infrastructure\XmlRpc\XmlRpcParameter.cs" />
+    <Compile Include="Infrastructure\XmlRpc\XmlRpcParameterMapper.cs" />
+    <Compile Include="Infrastructure\XmlRpc\XmlRpcResult.cs" />
+    <Compile Include="Infrastructure\XmlRpc\XmlRpcRouteHandler.cs" />
+    <Compile Include="Infrastructure\XmlRpc\XmlRpcValue.cs" />
+    <Compile Include="Models\Dialog.cs" />
+    <Compile Include="Models\DialogButton.cs" />
+    <Compile Include="Models\DialogFormat.cs" />
+    <Compile Include="Models\DialogSelection.cs" />
+    <Compile Include="Models\Module.cs" />
+    <Compile Include="Models\Page.cs" />
+    <Compile Include="Models\Plugin.cs" />
+    <Compile Include="OxiteApplication.cs" />
+    <Compile Include="Plugins\Attributes\ByteRangeValidationAttribute.cs" />
+    <Compile Include="Plugins\Attributes\IconSmallDisabledAttribute.cs" />
+    <Compile Include="Plugins\Attributes\IconSmallErrorAttribute.cs" />
+    <Compile Include="Plugins\Attributes\IconLargeDisabledAttribute.cs" />
+    <Compile Include="Plugins\Attributes\IconLargeErrorAttribute.cs" />
+    <Compile Include="Plugins\Attributes\IgnoreAttribute.cs" />
+    <Compile Include="Plugins\Attributes\DoubleRangeValidationAttribute.cs" />
+    <Compile Include="Plugins\Attributes\SingleRangeValidationAttribute.cs" />
+    <Compile Include="Plugins\Attributes\Int64RangeValidationAttribute.cs" />
+    <Compile Include="Plugins\Attributes\Int32RangeValidationAttribute.cs" />
+    <Compile Include="Plugins\Attributes\Int16RangeValidationAttribute.cs" />
+    <Compile Include="Plugins\Attributes\DecimalRangeValidationAttribute.cs" />
+    <Compile Include="Plugins\Attributes\DateRangeValidationAttribute.cs" />
+    <Compile Include="Plugins\Attributes\RequiredAttribute.cs" />
+    <Compile Include="Plugins\Extensions\PluginAssemblyContainerExtensions.cs" />
+    <Compile Include="Plugins\Extensions\PluginEngineExtensions.cs" />
+    <Compile Include="Plugins\Models\PluginProperties.cs" />
+    <Compile Include="Plugins\PluginLoadException.cs" />
+    <Compile Include="Plugins\PluginTimeout.cs" />
+    <Compile Include="Plugins\Attributes\AuthorsAttribute.cs" />
+    <Compile Include="Plugins\Attributes\OxiteMaxVersionAttribute.cs" />
+    <Compile Include="Plugins\Attributes\OxiteMinVersionAttribute.cs" />
+    <Compile Include="Plugins\Attributes\OrderAttribute.cs" />
+    <Compile Include="Plugins\Attributes\PropertyAppearance.cs" />
+    <Compile Include="Plugins\ContextItemEdit`1.cs" />
+    <Compile Include="Models\AjaxRedirect.cs" />
+    <Compile Include="Models\CacheDependencyList.cs" />
+    <Compile Include="Models\CachePartition.cs" />
+    <Compile Include="Models\Extensions\IPageOfItemsExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Infrastructure\IPluginEngine.cs" />
+    <Compile Include="Infrastructure\ModuleRegistry.cs" />
+    <Compile Include="Infrastructure\FileEngineResult.cs" />
+    <Compile Include="Infrastructure\FilterRegistryItem.cs" />
+    <Compile Include="Infrastructure\FilterRegistry.cs" />
+    <Compile Include="Infrastructure\FilterRegistryContext.cs" />
+    <Compile Include="Infrastructure\ControllerActionFilterCriteria.cs" />
+    <Compile Include="Infrastructure\DataFormatFilterCriteria.cs" />
+    <Compile Include="Infrastructure\IConditionalSkinResolver.cs" />
+    <Compile Include="Infrastructure\IFilterCriteria.cs" />
+    <Compile Include="Infrastructure\IFilterRegistry.cs" />
+    <Compile Include="Infrastructure\IModuleRegistry.cs" />
+    <Compile Include="Infrastructure\IOxiteModule.cs" />
+    <Compile Include="Infrastructure\IRegisterModules.cs" />
+    <Compile Include="Infrastructure\OxiteConfigurationSection.cs" />
+    <Compile Include="Infrastructure\OxiteModuleConfigurationElement.cs" />
+    <Compile Include="Infrastructure\OxiteModuleConfigurationElementCollection.cs" />
+    <Compile Include="Infrastructure\IOxiteViewEngine.cs" />
+    <Compile Include="Infrastructure\AppSettingsHelper.cs" />
+    <Compile Include="Infrastructure\IBootStrapperTask.cs" />
+    <Compile Include="Infrastructure\IRouteModifier.cs" />
+    <Compile Include="Infrastructure\ISkinResolver.cs" />
+    <Compile Include="Infrastructure\OxiteModulePropertyConfigurationElement.cs" />
+    <Compile Include="Infrastructure\OxiteModulePropertyConfigurationElementCollection.cs" />
+    <Compile Include="Plugins\ContextItem`1.cs" />
+    <Compile Include="Plugins\Models\BlogReadOnly.cs" />
+    <Compile Include="Plugins\Models\CommentReadOnly.cs" />
+    <Compile Include="Plugins\Models\CommentSmallReadOnly.cs" />
+    <Compile Include="Plugins\Attributes\PropertyGroup.cs" />
+    <Compile Include="Plugins\Models\PluginFileNotFoundException.cs" />
+    <Compile Include="Plugins\Models\State.cs" />
+    <Compile Include="Plugins\Models\UserReadOnly.cs" />
+    <Compile Include="Plugins\Models\TagReadOnly.cs" />
+    <Compile Include="Plugins\Models\TrackbackReadOnly.cs" />
+    <Compile Include="Plugins\Models\RoleReadOnly.cs" />
+    <Compile Include="Plugins\Models\PostSmallReadOnly.cs" />
+    <Compile Include="Plugins\Models\PageReadOnly.cs" />
+    <Compile Include="Plugins\Models\PostReadOnly.cs" />
+    <Compile Include="Plugins\Attributes\StringArrayValidationAttribute.cs" />
+    <Compile Include="Plugins\Attributes\StringValidationAttribute.cs" />
+    <Compile Include="Plugins\Attributes\LabelTextAttribute.cs" />
+    <Compile Include="Plugins\Attributes\HelpUrlAttribute.cs" />
+    <Compile Include="Plugins\Attributes\HelpTextAttribute.cs" />
+    <Compile Include="Plugins\Attributes\GroupAttribute.cs" />
+    <Compile Include="Plugins\PluginTemplateSelectorType.cs" />
+    <Compile Include="Plugins\PluginScript.cs" />
+    <Compile Include="Plugins\PluginScriptRegistry.cs" />
+    <Compile Include="Plugins\PluginStyle.cs" />
+    <Compile Include="Plugins\PluginStyleRegistry.cs" />
+    <Compile Include="Plugins\Validators\IPluginValidator.cs" />
+    <Compile Include="Plugins\Validators\PluginValidatorRange.cs" />
+    <Compile Include="Plugins\Validators\NumberRangeValidator.cs" />
+    <Compile Include="Plugins\Validators\DateRangeValidator.cs" />
+    <Compile Include="Plugins\Validators\RegularExpressionMatcher.cs" />
+    <Compile Include="Plugins\Validators\StringArrayValidator.cs" />
+    <Compile Include="Plugins\Validators\IPluginPropertyValidator.cs" />
+    <Compile Include="Plugins\Validators\StringValidator.cs" />
+    <Compile Include="Plugins\Attributes\AppearanceAttribute.cs" />
+    <Compile Include="Plugins\Attributes\PropertyDefinitionAttribute.cs" />
+    <Compile Include="Plugins\Attributes\DefaultValueAttribute.cs" />
+    <Compile Include="Plugins\Extensions\PluginContainerExtensions.cs" />
+    <Compile Include="Plugins\PluginContainer.cs" />
+    <Compile Include="Plugins\PluginAssemblyContainer.cs" />
+    <Compile Include="Models\DateRangeAddress.cs" />
+    <Compile Include="Models\Extensions\RequestDataFormatExtensions.cs" />
+    <Compile Include="Models\ImportCommentInput.cs" />
+    <Compile Include="Models\ImportBlogInput.cs" />
+    <Compile Include="Models\ImportPostInput.cs" />
+    <Compile Include="Models\MetaWeblogPostAddress.cs" />
+    <Compile Include="Models\ModelResult.cs" />
+    <Compile Include="Models\ModelResult`1.cs" />
+    <Compile Include="Models\OneMonthDateRangeAddress.cs" />
+    <Compile Include="Plugins\PluginEngine.cs" />
+    <Compile Include="Plugins\ReflectionPluginEngine.cs" />
+    <Compile Include="Infrastructure\SkinResolverContext.cs" />
+    <Compile Include="Infrastructure\ISkinResolverRegistry.cs" />
+    <Compile Include="Infrastructure\ResponseInsert.cs" />
+    <Compile Include="Infrastructure\ResponseFilter.cs" />
+    <Compile Include="Infrastructure\ResponseInsertMode.cs" />
+    <Compile Include="Models\AdminDashboardPageContainer.cs" />
+    <Compile Include="Models\ArchiveContainer.cs" />
+    <Compile Include="Models\ArchiveData.cs" />
+    <Compile Include="Models\Blog.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\CommentSmall.cs" />
+    <Compile Include="Models\PluginComment.cs" />
+    <Compile Include="Plugins\Attributes\BackgroundImageAttribute.cs" />
+    <Compile Include="Plugins\Attributes\CategoryAttribute.cs" />
+    <Compile Include="Plugins\Attributes\AuthorUrlsAttribute.cs" />
+    <Compile Include="Plugins\Attributes\VersionAttribute.cs" />
+    <Compile Include="Plugins\Attributes\TagsAttribute.cs" />
+    <Compile Include="Plugins\Attributes\HomePageAttribute.cs" />
+    <Compile Include="Plugins\Attributes\IconLargeAttribute.cs" />
+    <Compile Include="Plugins\Attributes\IconSmallAttribute.cs" />
+    <Compile Include="Plugins\Attributes\DescriptionAttribute.cs" />
+    <Compile Include="Plugins\Attributes\DisplayNameAttribute.cs" />
+    <Compile Include="Plugins\Attributes\DefinitionAttribute.cs" />
+    <Compile Include="Plugins\Models\PageForProcessing.cs" />
+    <Compile Include="Plugins\Models\PostForProcessing.cs" />
+    <Compile Include="Models\RequestDataFormat.cs" />
+    <Compile Include="Models\RoleType.cs" />
+    <Compile Include="Models\SiteSmall.cs" />
+    <Compile Include="Models\Extensions\PageExtensions.cs" />
+    <Compile Include="Models\EntityBase.cs" />
+    <Compile Include="Models\EntityState.cs" />
+    <Compile Include="Models\Extensions\INamedEntityExtensions.cs" />
+    <Compile Include="Models\Extensions\PostExtensions.cs" />
+    <Compile Include="Models\Extensions\TagExtensions.cs" />
+    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\HomePageContainer.cs" />
+    <Compile Include="Models\INamedEntity.cs" />
+    <Compile Include="Models\IPageOfItems.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\PagedQueryable.cs" />
+    <Compile Include="Models\MessageOutbound.cs" />
+    <Compile Include="Models\NotFoundPageContainer.cs" />
+    <Compile Include="Models\PageOfItems.cs" />
+    <Compile Include="Models\Phrase.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\PostSmall.cs" />
+    <Compile Include="Models\PostSubscription.cs" />
+    <Compile Include="Models\ResourceFile.cs" />
+    <Compile Include="Models\ResourceString.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\SignInPageContainer.cs" />
+    <Compile Include="Models\Site.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\TagCloudPageContainer.cs" />
+    <Compile Include="Models\Trackback.cs" />
+    <Compile Include="Models\TrackbackOutbound.cs" />
+    <Compile Include="Models\UserAuthenticated.cs" />
+    <Compile Include="Models\UserAnonymous.cs" />
+    <Compile Include="Infrastructure\OxiteControllerFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Infrastructure\IRegularExpressions.cs" />
+    <Compile Include="Infrastructure\RegularExpressions.cs" />
+    <Compile Include="Repositories\ILanguageRepository.cs" />
+    <Compile Include="Repositories\ILocalizationRepository.cs" />
+    <Compile Include="Repositories\IMessageOutboundRepository.cs" />
+    <Compile Include="Repositories\IModuleRepository.cs" />
+    <Compile Include="Repositories\IExtendedPropertyRepository.cs" />
+    <Compile Include="Repositories\ISiteRepository.cs" />
+    <Compile Include="Repositories\SqlServer\SqlServerExtendedPropertyRepository.cs" />
+    <Compile Include="Repositories\SqlServer\SqlServerLanguageRepository.cs" />
+    <Compile Include="Repositories\SqlServer\SqlServerMessageOutboundRepository.cs" />
+    <Compile Include="Repositories\SqlServer\SqlServerLocalizationRepository.cs" />
+    <Compile Include="Repositories\SqlServer\Oxite.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Oxite.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\SqlServer\SqlServerSiteRepository.cs" />
+    <Compile Include="Repositories\SqlServer\SqlServerModuleRepository.cs" />
+    <Compile Include="Results\DialogResult.cs" />
+    <Compile Include="Results\DialogSelectionResult.cs" />
+    <Compile Include="Results\ErrorResult.cs" />
+    <Compile Include="Results\FeedResult.cs" />
+    <Compile Include="Results\NotFoundResult.cs" />
+    <Compile Include="Results\UnauthorizedResult.cs" />
+    <Compile Include="Routing\IsArchiveDataConstraint.cs" />
+    <Compile Include="Routing\IsAuthenticatedConstraint.cs" />
+    <Compile Include="Routing\IsGuidConstraint.cs" />
+    <Compile Include="Routing\IsInFormCollectionConstraint.cs" />
+    <Compile Include="Routing\IsIntConstraint.cs" />
+    <Compile Include="Routing\IsLongConstraint.cs" />
+    <Compile Include="Routing\OpenSearchConstraint.cs" />
+    <Compile Include="Routing\RouteCollectionExtensions.cs" />
+    <Compile Include="Routing\RouteDirectionConstraint.cs" />
+    <Compile Include="Services\ExtendedPropertyService.cs" />
+    <Compile Include="Infrastructure\IOxiteCacheModule.cs" />
+    <Compile Include="Services\ILanguageService.cs" />
+    <Compile Include="Services\ILocalizationService.cs" />
+    <Compile Include="Services\IMessageOutboundService.cs" />
+    <Compile Include="Services\IModuleService.cs" />
+    <Compile Include="Services\IQueryableExtensions.cs" />
+    <Compile Include="Services\IExtendedPropertyService.cs" />
+    <Compile Include="Services\ISiteService.cs" />
+    <Compile Include="Services\LanguageService.cs" />
+    <Compile Include="Services\LocalizationService.cs" />
+    <Compile Include="Services\MessageOutboundService.cs" />
+    <Compile Include="Services\ModuleService.cs" />
+    <Compile Include="Services\ServiceContext.cs" />
+    <Compile Include="Services\SiteService.cs" />
+    <Compile Include="Skinning\LegacySkinResolver.cs" />
+    <Compile Include="Skinning\MobileSkinResolver.cs" />
+    <Compile Include="Skinning\OxiteSkinResolver.cs" />
+    <Compile Include="Skinning\OxiteWebFormViewEngine.cs" />
+    <Compile Include="Skinning\SkinResolverRegistry.cs" />
+    <Compile Include="Validation\IValidationService.cs" />
+    <Compile Include="Validation\IValidator.cs" />
+    <Compile Include="Validation\SiteValidator.cs" />
+    <Compile Include="Validation\ValidationError.cs" />
+    <Compile Include="Validation\ValidationErrorCollection.cs" />
+    <Compile Include="Validation\ValidationException.cs" />
+    <Compile Include="Validation\ValidationService.cs" />
+    <Compile Include="Validation\ValidationState.cs" />
+    <Compile Include="Validation\ValidationStateDictionary.cs" />
+    <Compile Include="Infrastructure\Visitor.cs" />
+    <Compile Include="Validation\ValidatorBase`1.cs" />
+    <Compile Include="ViewModels\AdminDataViewModel.cs" />
+    <Compile Include="ViewModels\ArchiveViewModel.cs" />
+    <Compile Include="ViewModels\OxiteViewModelItemItems`2.cs" />
+    <Compile Include="ViewModels\ExceptionOxiteViewModel.cs" />
+    <Compile Include="ViewModels\OxiteViewModel.cs" />
+    <Compile Include="ViewModels\OxiteViewModelItem`1.cs" />
+    <Compile Include="ViewModels\OxiteViewModelItems`1.cs" />
+    <Compile Include="ViewModels\OxiteViewModelPartial`1.cs" />
+    <Compile Include="ViewModels\PageListViewModel.cs" />
+    <Compile Include="Plugins\PluginTemplate.cs" />
+    <Compile Include="ViewModels\PlayerViewModel.cs" />
+    <Compile Include="ViewModels\SiteViewModel.cs" />
+    <Compile Include="ViewModels\TagCloudViewModel.cs" />
+    <Compile Include="ViewModels\TrackbackViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Repositories\SqlServer\Oxite.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Oxite.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Repositories\SqlServer\Oxite.dbml.layout">
+      <DependentUpon>Oxite.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
