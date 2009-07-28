@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[oxite_Page] ADD CONSTRAINT [PK_oxite_Page] PRIMARY KEY CLUSTERED  ([PageID]) ON [PRIMARY]
+
+
